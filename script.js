@@ -138,3 +138,22 @@ document.addEventListener("DOMContentLoaded", () => {
             );
         });
     }
+    // 9. Contact Page GSAP Trigger Sequences
+    if(document.querySelector(".contact-page-hero")) {
+        gsap.fromTo(".contact-page-hero h1", { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 1, ease: "power4.out", delay: 0.2 });
+        gsap.fromTo(".contact-page-hero p, .contact-page-hero .hero-badge", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.8, stagger: 0.15, delay: 0.4 });
+    }
+
+    const contactSelectors = ".support-info-block h2, .support-p, .channel-list, .contact-form-block";
+    if(document.querySelectorAll(contactSelectors).length > 0) {
+        gsap.fromTo(contactSelectors, 
+            { opacity: 0, y: 40 },
+            {
+                opacity: 1, y: 0, duration: 0.8, stagger: 0.15, ease: "power3.out",
+                scrollTrigger: {
+                    trigger: ".whatsapp-form-section",
+                    start: "top 75%"
+                }
+            }
+        );
+    }
