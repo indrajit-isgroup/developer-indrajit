@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+   <!-- Main Home Page -->
+   <url>
+      <loc>https://indrajit-isgroup.github.io/developer-indrajit/</loc>
+      <priority>1.00</priority>
+   </url>
+   
+   <!-- About Page -->
+   <url>
+      <loc>https://indrajit-isgroup.github.io/developer-indrajit/about.html</loc>
+      <priority>0.80</priority>
+   </url>
+   
+   <!-- Ventures Page -->
+   <url>
+      <loc>https://indrajit-isgroup.github.io/developer-indrajit/ventures.html</loc>
+      <priority>0.80</priority>
+   </url>
+   
+   <!-- WhatsApp Contact Page -->
+   <url>
+      <loc>https://indrajit-isgroup.github.io/developer-indrajit/contact.html</loc>
+      <priority>0.80</priority>
+   </url>
+</urlset>
