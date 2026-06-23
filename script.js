@@ -1,11 +1,11 @@
-// ==========================================
-// 1. THREE.JS 3D BACKGROUND SETUP
-// ==========================================
+// ==========================================================
+// 1. ENGINE: THREE.JS INTERACTIVE ENVIRONMENT
+// ==========================================================
 const canvas = document.querySelector('#bg-canvas');
 const scene = new THREE.Scene();
 
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-camera.position.z = 3;
+camera.position.z = 3.5;
 
 const renderer = new THREE.WebGLRenderer({
     canvas: canvas,
@@ -16,21 +16,21 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
 const particlesGeometry = new THREE.BufferGeometry();
-const particlesCount = 3500; 
+const particlesCount = 4000; // Increased density for premium fidelity
 
 const posArray = new Float32Array(particlesCount * 3);
 
 for(let i=0; i < particlesCount * 3; i++) {
-    posArray[i] = (Math.random() - 0.5) * 8; 
+    posArray[i] = (Math.random() - 0.5) * 10; 
 }
 
 particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
 
 const particlesMaterial = new THREE.PointsMaterial({
-    size: 0.008,
-    color: '#6633ff', 
+    size: 0.006,
+    color: '#6366f1', // Upgraded to premium indigo hue
     transparent: true,
-    opacity: 0.85,
+    opacity: 0.7,
     blending: THREE.AdditiveBlending 
 });
 
@@ -61,11 +61,12 @@ const clock = new THREE.Clock();
 const animate = () => {
     const elapsedTime = clock.getElapsedTime();
 
-    particlesMesh.rotation.y = elapsedTime * 0.05;
-    particlesMesh.rotation.x = -scrollY * 0.0004; 
+    particlesMesh.rotation.y = elapsedTime * 0.03;
+    particlesMesh.rotation.x = -scrollY * 0.0003; 
 
-    particlesMesh.rotation.y += mouseX * 0.25;
-    particlesMesh.rotation.x += -mouseY * 0.25;
+    // Smooth physics damping interpolation
+    particlesMesh.rotation.y += (mouseX * 0.3 - particlesMesh.rotation.y) * 0.05;
+    particlesMesh.rotation.x += (-mouseY * 0.3 - particlesMesh.rotation.x) * 0.05;
 
     renderer.render(scene, camera);
     requestAnimationFrame(animate);
@@ -74,44 +75,50 @@ const animate = () => {
 animate();
 
 
-// ==========================================
-// 2. GSAP LOADING & TEXT/IMAGE ANIMATION
-// ==========================================
+// ==========================================================
+// 2. TIMELINE: GSAP PRODUCTION TIMING PIPELINE
+// ==========================================================
 window.addEventListener('DOMContentLoaded', () => {
+    // Advanced Custom Timeline
     const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
 
-    // Header animation
+    // Animate Premium Glass Header Top-down reveal
     tl.to(".anim-header", {
         opacity: 1,
         y: 0,
-        duration: 1,
-        startAt: { y: -20 }
-    });
-
-    // Hero Text animation
-    tl.from(".anim-text", {
-        y: 50,
-        opacity: 0,
         duration: 1.2,
-        stagger: 0.2 
-    }, "-=0.6"); 
-
-    // Hero Photo animation (01.png)
-    tl.from(".anim-img-1", {
-        scale: 0.8,
-        opacity: 0,
-        duration: 1.5,
-        ease: "elastic.out(1, 0.75)"
-    }, "-=1");
-
-    // About Photo animation (321.jpg)
-    gsap.from(".anim-img-2", {
-        scrollTrigger: {
-            trigger: ".anim-img-2",
-            start: "top 80%",
-        },
-        opacity: 0,
-        x: 50,
-        duration: 1
+        startAt: { y: -30 }
     });
+
+    // Cascade animate Typography Layouts
+    tl.from(".anim-text", {
+        y: 40,
+        opacity: 0,
+        duration: 1.4,
+        stagger: 0.15
+    }, "-=0.8"); 
+
+    // Fluid launch for Hero Profile Photo
+    tl.from(".anim-img-1", {
+        scale: 0.95,
+        opacity: 0,
+        duration: 1.6,
+        ease: "power3.out"
+    }, "-=1.2");
+
+    // Dynamic reveal of About image upon scroll activation
+    if (typeof ScrollTrigger !== 'undefined') {
+        gsap.registerPlugin(ScrollTrigger);
+        
+        gsap.from(".anim-img-2", {
+            scrollTrigger: {
+                trigger: ".anim-grid",
+                start: "top 80%",
+            },
+            opacity: 0,
+            y: 30,
+            duration: 1.2,
+            ease: "power3.out"
+        });
+    }
 });

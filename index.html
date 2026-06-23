@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Indrajit Samanta | Portfolio</title>
+    <title>Indrajit Samanta | Creative Web Developer</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,82 +11,122 @@
     <canvas id="bg-canvas"></canvas>
 
     <main id="content">
+        
         <header class="anim-header">
-            <div class="logo">INDRAJIT SAMANTA</div>
+            <div class="logo">
+                <span class="logo-dot"></span>INDRAJIT SAMANTA
+            </div>
             <nav>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#contact" class="nav-link">Contact</a>
+                <a href="#about" class="nav-link"><span>01.</span> About</a>
+                <a href="#projects" class="nav-link"><span>02.</span> Projects</a>
+                <a href="#contact" class="nav-link"><span>03.</span> Contact</a>
             </nav>
         </header>
 
         <section class="hero">
             <div class="hero-text">
+                <div class="badge">Available for Freelance & Projects</div>
                 <h1 class="anim-text">CREATIVE DIGITAL<br><span class="gradient-text">EXPERIENCES</span></h1>
-                <p class="anim-text">Hi, I am Indrajit Samanta. A Web Developer focused on crafting interactive and dynamic modern web experiences.</p>
-                <a href="#projects" class="cta-btn anim-text">Explore My Work</a>
+                <p class="anim-text">I am a specialized Web Developer crafting high-end, interactive, and production-ready digital products that merge technical logic with aesthetic design.</p>
+                <div class="hero-actions anim-text">
+                    <a href="#projects" class="cta-btn primary">View My Work</a>
+                    <a href="#about" class="cta-btn secondary">Read Bio</a>
+                </div>
             </div>
-            <div class="hero-image-container anim-img-1">
+            <div class="hero-image-wrapper anim-img-1">
+                <div class="image-border-glow"></div>
                 <img src="01.png" alt="Indrajit Samanta" class="profile-img">
             </div>
         </section>
 
         <section id="about" class="content-section">
-            <div class="about-container">
-                <div class="about-text">
-                    <h2>The Vision</h2>
-                    <p>I build web solutions that bridge the gap between design and functionality. By leveraging modern frameworks and cutting-edge animations, I transform static layouts into immersive digital journeys.</p>
+            <div class="about-grid">
+                <div class="about-text-side">
+                    <div class="section-tag">01 / Engineering Identity</div>
+                    <h2>The Design Philosophy</h2>
+                    <p>I build clean, scalable web architectures balanced with deep visual immersion. By utilizing production-grade frameworks, motion libraries, and interactive 3D layers, I transform business concepts into high-converting online realities.</p>
+                    <div class="skills-mini-grid">
+                        <div class="skill-item">Frontend Development</div>
+                        <div class="skill-item">UI/UX Architecture</div>
+                        <div class="skill-item">Interactive 3D Ecosystems</div>
+                    </div>
                 </div>
-                <div class="about-image-container anim-img-2">
+                <div class="about-image-wrapper anim-img-2">
                     <img src="321.jpg" alt="Indrajit Working" class="about-img">
                 </div>
             </div>
         </section>
 
         <section id="projects" class="content-section">
-            <h2>Featured Work</h2>
+            <div class="section-tag">02 / Selected Works</div>
+            <h2 class="section-title">Production & Case Studies</h2>
+            
             <div class="project-grid">
-                <a href="https://studo-next.github.io/studonext/" target="_blank" class="project-card featured">
-                    <div>
+                <a href="https://studo-next.github.io/studonext/" target="_blank" class="project-card featured-work">
+                    <div class="card-glow-effect"></div>
+                    <div class="card-content">
+                        <div class="card-header-meta">
+                            <span class="featured-badge">Flagship Project</span>
+                            <span class="project-number">01</span>
+                        </div>
                         <h3>STUDONEXT</h3>
-                        <p>An ultimate, all-in-one resource platform tailored for students to manage, discover, and fulfill all their academic and structural needs seamlessly.</p>
-                    </div>
-                    <div class="card-footer">
-                        <span class="tech-tag">Web Application</span>
-                        <span class="visit-link">Visit Website &rarr;</span>
+                        <p class="project-description">A full-scale digital ecosystem meticulously engineered for students. It aggregates decentralized educational resources, productivity tools, and essential utilities into one unified workspace.</p>
+                        <div class="card-footer">
+                            <div class="tech-stack-tags">
+                                <span>Ecosystem</span>
+                                <span>Student Platform</span>
+                            </div>
+                            <span class="visit-action-btn">Launch Application &nearr;</span>
+                        </div>
                     </div>
                 </a>
 
-                <div class="project-card">
-                    <div>
+                <div class="project-card standard-work">
+                    <div class="card-content">
+                        <div class="card-header-meta">
+                            <span class="tech-tag">Experimental</span>
+                            <span class="project-number">02</span>
+                        </div>
                         <h3>Secret Sky</h3>
-                        <p>Interactive 3D landing page experiment built with custom particle physics.</p>
-                    </div>
-                    <div class="card-footer">
-                        <span class="tech-tag">Three.js / WebGL</span>
+                        <p class="project-description">An immersive 3D web experience experimenting with mathematical particle physics, real-time lighting calculations, and canvas processing layers.</p>
+                        <div class="card-footer">
+                            <div class="tech-stack-tags">
+                                <span>Three.js</span>
+                                <span>WebGL</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="project-card">
-                    <div>
+                <div class="project-card standard-work">
+                    <div class="card-content">
+                        <div class="card-header-meta">
+                            <span class="tech-tag">Interface Design</span>
+                            <span class="project-number">03</span>
+                        </div>
                         <h3>Quantum Core</h3>
-                        <p>A minimalist developer interface focusing on smooth animations and micro-interactions.</p>
-                    </div>
-                    <div class="card-footer">
-                        <span class="tech-tag">GSAP / UI Design</span>
+                        <p class="project-description">A hyper-minimalist developer dashboard UI featuring layout optimizations, micro-animations, and fluid state management.</p>
+                        <div class="card-footer">
+                            <div class="tech-stack-tags">
+                                <span>GSAP</span>
+                                <span>UI Engine</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="content-section">
-            <h2>Get In Touch</h2>
-            <p>Looking for a developer to bring your next big idea to life? Let's collaborate and build something spectacular.</p>
-            <a href="mailto:your-email@example.com" class="cta-btn">Say Hello</a>
+        <section id="contact" class="content-section contact-center">
+            <div class="badge">Let's Connect</div>
+            <h2>Start a Project</h2>
+            <p>Whether you need a robust web application, a premium corporate platform, or custom digital architectures, I am ready to deploy my skills.</p>
+            <a href="mailto:your-email@example.com" class="main-contact-button">Get In Touch</a>
         </section>
     </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="script.js"></script>
 </body>
