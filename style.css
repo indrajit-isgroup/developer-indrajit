@@ -1,12 +1,11 @@
-/* Premium Professional CSS Reset & Framework Typography */
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
 :root {
     --bg-base: #030305;
     --text-primary: #ffffff;
     --text-secondary: #94a3b8;
-    --accent-primary: #6366f1; /* Neon Indigo */
-    --accent-secondary: #ec4899; /* Neon Pink */
+    --accent-primary: #6366f1;
+    --accent-secondary: #ec4899;
     --glass-bg: rgba(255, 255, 255, 0.01);
     --glass-border: rgba(255, 255, 255, 0.05);
 }
@@ -27,7 +26,6 @@ body {
     position: relative;
 }
 
-/* 3D Background Canvas Stays Fixed Behind Everything */
 #bg-canvas {
     position: fixed;
     top: 0;
@@ -44,12 +42,12 @@ body {
     width: 100%;
 }
 
-/* Premium Navigation Bar Blueprint */
+/* Header Navigation - Mobile Scaled */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 24px 8%;
+    padding: 20px 6%;
     position: fixed;
     width: 100%;
     top: 0;
@@ -63,10 +61,11 @@ header {
 .logo {
     font-weight: 700;
     letter-spacing: -0.5px;
-    font-size: 1.1rem;
+    font-size: 1rem;
     display: flex;
     align-items: center;
     gap: 8px;
+    white-space: nowrap;
 }
 
 .logo-dot {
@@ -77,19 +76,23 @@ header {
     box-shadow: 0 0 10px var(--accent-primary);
 }
 
+nav {
+    display: flex;
+    gap: 20px;
+}
+
 nav a {
     color: var(--text-secondary);
     text-decoration: none;
-    margin-left: 40px;
-    transition: color 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-    font-size: 0.9rem;
+    transition: color 0.3s ease;
+    font-size: 0.85rem;
     font-weight: 500;
 }
 
 nav a span {
     color: var(--accent-primary);
-    font-size: 0.8rem;
-    margin-right: 4px;
+    font-size: 0.75rem;
+    margin-right: 2px;
 }
 
 nav a:hover {
@@ -101,24 +104,24 @@ nav a:hover {
     background: rgba(99, 102, 241, 0.1);
     border: 1px solid rgba(99, 102, 241, 0.2);
     color: #a5b4fc;
-    padding: 6px 16px;
+    padding: 6px 14px;
     border-radius: 100px;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: 600;
     display: inline-block;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
-/* Hero Section Layout Architecture */
+/* Hero Section */
 .hero {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 8%;
-    gap: 80px;
+    padding: 120px 6% 60px 6%;
+    gap: 40px;
 }
 
 .hero-text {
@@ -126,11 +129,11 @@ nav a:hover {
 }
 
 .hero-text h1 {
-    font-size: 4.8rem;
+    font-size: 4rem;
     font-weight: 800;
-    line-height: 1.05;
-    letter-spacing: -3px;
-    margin-bottom: 24px;
+    line-height: 1.1;
+    letter-spacing: -2px;
+    margin-bottom: 20px;
 }
 
 .gradient-text {
@@ -140,28 +143,29 @@ nav a:hover {
 }
 
 .hero-text p {
-    font-size: 1.15rem;
+    font-size: 1.05rem;
     color: var(--text-secondary);
-    max-width: 580px;
-    margin-bottom: 48px;
-    font-weight: 400;
-    line-height: 1.65;
+    max-width: 540px;
+    margin-bottom: 36px;
+    line-height: 1.6;
 }
 
 .hero-actions {
     display: flex;
-    gap: 16px;
+    gap: 12px;
+    flex-wrap: wrap;
 }
 
-/* Luxury Interactive Buttons */
+/* Buttons */
 .cta-btn {
     display: inline-block;
-    padding: 16px 36px;
+    padding: 14px 28px;
     text-decoration: none;
-    border-radius: 12px;
-    font-size: 0.95rem;
+    border-radius: 10px;
+    font-size: 0.9rem;
     font-weight: 600;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    white-space: nowrap;
 }
 
 .cta-btn.primary {
@@ -170,8 +174,8 @@ nav a:hover {
 }
 
 .cta-btn.primary:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(255, 255, 255, 0.1);
 }
 
 .cta-btn.secondary {
@@ -183,23 +187,22 @@ nav a:hover {
 
 .cta-btn.secondary:hover {
     background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(255, 255, 255, 0.2);
-    transform: translateY(-4px);
+    transform: translateY(-3px);
 }
 
-/* Image Wrapper Configurations */
+/* Hero Profile Image Layout */
 .hero-image-wrapper {
     flex: 0.8;
     position: relative;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
 }
 
 .profile-img {
-    width: 380px;
-    height: 480px;
+    width: 320px;
+    height: 400px;
     object-fit: cover;
-    border-radius: 24px;
+    border-radius: 20px;
     border: 1px solid var(--glass-border);
     z-index: 2;
     position: relative;
@@ -207,91 +210,89 @@ nav a:hover {
 
 .image-border-glow {
     position: absolute;
-    width: 380px;
-    height: 480px;
+    width: 320px;
+    height: 400px;
     background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-    border-radius: 24px;
-    filter: blur(30px);
+    border-radius: 20px;
+    filter: blur(25px);
     opacity: 0.15;
     z-index: 1;
     top: 10px;
-    right: -10px;
 }
 
-/* Modular Content Sections */
+/* Global Content Sections Setup */
 .content-section {
-    padding: 140px 8%;
+    padding: 100px 6%;
 }
 
 .section-tag {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: var(--accent-primary);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
 }
 
 .section-title {
-    font-size: 2.8rem;
+    font-size: 2.4rem;
     font-weight: 800;
     letter-spacing: -1px;
-    margin-bottom: 48px;
+    margin-bottom: 36px;
 }
 
-/* About Grid Layout */
+/* About Layout Grid */
 .about-grid {
     display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    gap: 80px;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 50px;
     align-items: center;
 }
 
 .about-text-side h2 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 800;
-    letter-spacing: -1.5px;
-    margin-bottom: 24px;
+    letter-spacing: -1px;
+    margin-bottom: 20px;
 }
 
 .about-text-side p {
     color: var(--text-secondary);
-    font-size: 1.1rem;
-    line-content: 1.75;
-    margin-bottom: 40px;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    margin-bottom: 32px;
 }
 
 .skills-mini-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 10px;
 }
 
 .skill-item {
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid var(--glass-border);
-    padding: 10px 20px;
+    padding: 8px 16px;
     border-radius: 8px;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: #cbd5e1;
 }
 
 .about-image-wrapper .about-img {
     width: 100%;
-    height: 340px;
+    height: 300px;
     object-fit: cover;
     border-radius: 16px;
     border: 1px solid var(--glass-border);
 }
 
-/* High-End Industrial Project Grid Architecture */
+/* Professional Card Project Grid Architecture */
 .project-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
+    gap: 24px;
 }
 
-/* Grid Override to give STUDONEXT full prominence */
 .project-card.featured-work {
     grid-column: span 2;
     background: linear-gradient(rgba(3, 3, 5, 0.8), rgba(3, 3, 5, 0.9)), rgba(99, 102, 241, 0.03);
@@ -300,69 +301,65 @@ nav a:hover {
 
 .project-card {
     position: relative;
-    border-radius: 20px;
+    border-radius: 16px;
     background: rgba(255, 255, 255, 0.01);
     border: 1px solid var(--glass-border);
     backdrop-filter: blur(12px);
     text-decoration: none;
     color: inherit;
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     overflow: hidden;
 }
 
 .card-content {
-    padding: 48px;
+    padding: 32px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
-    min-height: 320px;
-    z-index: 3;
-    position: relative;
+    min-height: 280px;
 }
 
 .card-header-meta {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 32px;
+    margin-bottom: 20px;
 }
 
 .featured-badge {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-    padding: 4px 12px;
+    padding: 4px 10px;
     border-radius: 100px;
     font-weight: 700;
     text-transform: uppercase;
 }
 
 .tech-tag {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: var(--text-secondary);
     border-left: 2px solid var(--accent-primary);
-    padding-left: 8px;
+    padding-left: 6px;
 }
 
 .project-number {
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.2);
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.15);
     font-weight: 600;
 }
 
 .project-card h3 {
-    font-size: 2rem;
+    font-size: 1.6rem;
     font-weight: 700;
-    letter-spacing: -0.5px;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
 }
 
 .project-description {
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: var(--text-secondary);
-    line-height: 1.6;
-    margin-bottom: 40px;
-    max-width: 680px;
+    line-height: 1.5;
+    margin-bottom: 30px;
 }
 
 .card-footer {
@@ -370,83 +367,79 @@ nav a:hover {
     justify-content: space-between;
     align-items: center;
     border-top: 1px solid var(--glass-border);
-    padding-top: 24px;
+    padding-top: 20px;
+    flex-wrap: wrap;
+    gap: 12px;
 }
 
 .tech-stack-tags {
     display: flex;
-    gap: 8px;
+    gap: 6px;
 }
 
 .tech-stack-tags span {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     background: rgba(255, 255, 255, 0.04);
-    padding: 6px 14px;
+    padding: 4px 10px;
     border-radius: 6px;
     color: #94a3b8;
 }
 
 .visit-action-btn {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     font-weight: 600;
     color: #a5b4fc;
-    transition: transform 0.3s ease;
 }
 
-/* Premium Hover Micro-interactions */
 .project-card:hover {
-    transform: translateY(-8px);
-    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.12);
 }
 
 .project-card.featured-work:hover {
     border-color: var(--accent-primary);
-    box-shadow: 0 30px 60px rgba(99, 102, 241, 0.1);
+    box-shadow: 0 20px 40px rgba(99, 102, 241, 0.08);
 }
 
-.project-card.featured-work:hover .visit-action-btn {
-    transform: translate(4px, -4px);
-    color: white;
-}
-
-/* Contact Area Layout */
+/* Contact Area */
 .contact-center {
     text-align: center;
-    max-width: 700px;
+    max-width: 650px;
     margin: 0 auto;
 }
 
 .contact-center h2 {
-    font-size: 3.5rem;
+    font-size: 2.8rem;
     font-weight: 800;
-    letter-spacing: -2px;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
 }
 
 .contact-center p {
     color: var(--text-secondary);
-    font-size: 1.15rem;
-    line-height: 1.65;
-    margin-bottom: 48px;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 36px;
 }
 
 .main-contact-button {
     display: inline-block;
-    padding: 20px 48px;
+    padding: 16px 40px;
     background: var(--text-primary);
     color: var(--bg-base);
     text-decoration: none;
     font-weight: 700;
-    border-radius: 14px;
-    transition: all 0.4s ease;
+    border-radius: 12px;
+    transition: all 0.3s ease;
 }
 
 .main-contact-button:hover {
-    transform: scale(1.03);
-    box-shadow: 0 20px 40px rgba(255,255,255,0.08);
+    transform: scale(1.02);
 }
 
-/* Layout Responsiveness Adaptability */
+/* ==========================================================
+   ADVANCED RESPONSIVE MEDIA QUERIES (MOBILE BREAKPOINTS)
+   ========================================================== */
+
 @media (max-width: 1024px) {
     .hero {
         flex-direction: column;
@@ -458,12 +451,13 @@ nav a:hover {
     }
     .hero-image-wrapper {
         justify-content: center;
+        width: 100%;
     }
     .hero-text h1 {
-        font-size: 3.8rem;
+        font-size: 3.5rem;
     }
     .hero-text p {
-        margin: 0 auto 40px auto;
+        margin: 0 auto 30px auto;
     }
     .hero-actions {
         justify-content: center;
@@ -477,5 +471,44 @@ nav a:hover {
     }
     .project-card.featured-work {
         grid-column: span 1;
+    }
+}
+
+@media (max-width: 640px) {
+    header {
+        padding: 16px 5%;
+        flex-direction: column;
+        gap: 12px;
+    }
+    nav {
+        gap: 16px;
+    }
+    .hero {
+        padding-top: 160px;
+    }
+    .hero-text h1 {
+        font-size: 2.6rem;
+    }
+    .hero-text p {
+        font-size: 0.95rem;
+    }
+    .profile-img, .image-border-glow {
+        width: 260px;
+        height: 330px;
+    }
+    .section-title {
+        font-size: 1.8rem;
+    }
+    .about-text-side h2 {
+        font-size: 1.8rem;
+    }
+    .card-content {
+        padding: 24px;
+    }
+    .project-card h3 {
+        font-size: 1.4rem;
+    }
+    .contact-center h2 {
+        font-size: 2rem;
     }
 }
