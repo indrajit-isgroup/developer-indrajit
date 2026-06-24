@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Indrajit Samanta</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Shared 3D Particle Background -->
+    <canvas id="bg-canvas"></canvas>
+
+    <main id="content">
+        <!-- Shared Header -->
+        <header style="opacity: 1;">
+            <div class="logo">
+                <span class="logo-dot"></span>INDRAJIT SAMANTA
+            </div>
+            <nav>
+                <a href="index.html#about" class="nav-link"><span>01.</span> About</a>
+                <a href="index.html#projects" class="nav-link"><span>02.</span> Projects</a>
+                <a href="contact.html" class="nav-link active"><span>03.</span> Contact</a>
+            </nav>
+        </header>
+
+        <!-- Premium Contact Page Layout -->
+        <section class="contact-page-section">
+            <div class="contact-grid-layout">
+                
+                <!-- Left Side: Info -->
+                <div class="contact-info-side">
+                    <div class="section-tag">03 / Connect</div>
+                    <h1>Let's build something spectacular.</h1>
+                    <p>Have an idea, a project partnership proposal, or just want to say hello? Drop a message and let's start coding your vision into reality.</p>
+                    
+                    <div class="contact-meta-details">
+                        <div class="meta-item">
+                            <span>Email Directly</span>
+                            <p>indrajit.cyber.point@gmail.com</p>
+                        </div>
+                        <div class="meta-item">
+                            <span>Social Networks</span>
+                            <div class="social-links">
+                                <a href="https://www.youtube.com/@Indrajitsvlogs01" target="_blank">YouTube</a>
+                                <a href="#" target="_blank">Facebook Page</a>
+                                <a href="https://api.whatsapp.com/send/?phone=7872252866" target="_blank">Whatchapp</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side: Interactive Form -->
+                <div class="contact-form-side">
+                    <form action="#" class="premium-form">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" placeholder="john@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Project Details / Message</label>
+                            <textarea id="message" rows="6" placeholder="Tell me about your project needs..." required></textarea>
+                        </div>
+                        <button type="submit" class="form-submit-btn">Send Message &rarr;</button>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Three.js Library for background continuity -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
