@@ -16,7 +16,7 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
 const particlesGeometry = new THREE.BufferGeometry();
-const particlesCount = 4000; // Increased density for premium fidelity
+const particlesCount = 4000; 
 
 const posArray = new Float32Array(particlesCount * 3);
 
@@ -28,7 +28,7 @@ particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3
 
 const particlesMaterial = new THREE.PointsMaterial({
     size: 0.006,
-    color: '#6366f1', // Upgraded to premium indigo hue
+    color: '#6366f1', 
     transparent: true,
     opacity: 0.7,
     blending: THREE.AdditiveBlending 
@@ -45,10 +45,21 @@ document.addEventListener('mousemove', (event) => {
     mouseY = (event.clientY / window.innerHeight) - 0.5;
 });
 
-let scrollY = window.scrollY;
-window.addEventListener('scroll', () => {
-    scrollY = window.scrollY;
-});
+const clock = new THREE.Clock();
+
+const animate = () => {
+    const elapsedTime = clock.getElapsedTime();
+
+    particlesMesh.rotation.y = elapsedTime * 0.025; 
+    particlesMesh.rotation.x = -window.scrollY * 0.0002;
+
+    particlesMesh.rotation.y += (mouseX * 0.25 - particlesMesh.rotation.y) * 0.04;
+    particlesMesh.rotation.x += (-mouseY * 0.25 - particlesMesh.rotation.x) * 0.04;
+
+    renderer.render(scene, camera);
+    requestAnimationFrame(animate);
+};
+animate();
 
 window.addEventListener('resize', () => {
     camera.aspect = window.innerWidth / window.innerHeight;
@@ -56,69 +67,72 @@ window.addEventListener('resize', () => {
     renderer.setSize(window.innerWidth, window.innerHeight);
 });
 
-const clock = new THREE.Clock();
-
-const animate = () => {
-    const elapsedTime = clock.getElapsedTime();
-
-    particlesMesh.rotation.y = elapsedTime * 0.03;
-    particlesMesh.rotation.x = -scrollY * 0.0003; 
-
-    // Smooth physics damping interpolation
-    particlesMesh.rotation.y += (mouseX * 0.3 - particlesMesh.rotation.y) * 0.05;
-    particlesMesh.rotation.x += (-mouseY * 0.3 - particlesMesh.rotation.x) * 0.05;
-
-    renderer.render(scene, camera);
-    requestAnimationFrame(animate);
-};
-
-animate();
-
-
 // ==========================================================
-// 2. TIMELINE: GSAP PRODUCTION TIMING PIPELINE
+// 2. TIMELINE: GSAP ADVANCED CASCADE ANIMATION PIPELINE
 // ==========================================================
 window.addEventListener('DOMContentLoaded', () => {
-    // Advanced Custom Timeline
-    const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
+    if (typeof gsap !== 'undefined') {
+        const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
 
-    // Animate Premium Glass Header Top-down reveal
-    tl.to(".anim-header", {
-        opacity: 1,
-        y: 0,
-        duration: 1.2,
-        startAt: { y: -30 }
-    });
-
-    // Cascade animate Typography Layouts
-    tl.from(".anim-text", {
-        y: 40,
-        opacity: 0,
-        duration: 1.4,
-        stagger: 0.15
-    }, "-=0.8"); 
-
-    // Fluid launch for Hero Profile Photo
-    tl.from(".anim-img-1", {
-        scale: 0.95,
-        opacity: 0,
-        duration: 1.6,
-        ease: "power3.out"
-    }, "-=1.2");
-
-    // Dynamic reveal of About image upon scroll activation
-    if (typeof ScrollTrigger !== 'undefined') {
-        gsap.registerPlugin(ScrollTrigger);
-        
-        gsap.from(".anim-img-2", {
-            scrollTrigger: {
-                trigger: ".anim-grid",
-                start: "top 80%",
-            },
-            opacity: 0,
-            y: 30,
+        // 1. Smoothly Reveal Header Menu
+        tl.to(".anim-header, header", {
+            opacity: 1,
+            y: 0,
             duration: 1.2,
-            ease: "power3.out"
+            startAt: { y: -50 }
         });
+
+        // 2. Cascade Entrance for Hero Text & Typo Modules
+        tl.from(".anim-text", {
+            y: 50,
+            opacity: 0,
+            duration: 1.4,
+            stagger: 0.15
+        }, "-=0.8"); 
+
+        // 3. Scale Reveal for Hero Profile Ring Photo
+        tl.to(".anim-img-1", {
+            scale: 1,
+            opacity: 1,
+            duration: 1.6,
+            ease: "power3.out"
+        }, "-=1.2");
+
+        // 4. Stagger Cascading Reveal for Projects Grid Cards
+        tl.to(".card-anim", {
+            opacity: 1,
+            y: 0,
+            duration: 1.2,
+            stagger: 0.2,
+            ease: "power3.out"
+        }, "-=0.5");
+
+        // 5. Inbound Fly-in for Contact Form Dashboard
+        tl.to(".form-anim", {
+            opacity: 1,
+            y: 0,
+            duration: 1.4,
+            ease: "power4.out"
+        }, "-=0.8");
+
+        // ==========================================================
+        // 3. SCROLLTRIGGER: DYNAMIC SCROLL ACTIVATED TRIGGERS
+        // ==========================================================
+        if (typeof ScrollTrigger !== 'undefined') {
+            gsap.utils.toArray(".scroll-anim").forEach(element => {
+                gsap.to(element, {
+                    scrollTrigger: {
+                        trigger: element,
+                        start: "top 85%",
+                        toggleActions: "play none none none"
+                    },
+                    opacity: 1,
+                    y: 0,
+                    x: 0,
+                    duration: 1.2,
+                    ease: "power3.out"
+                });
+            });
+        }
     }
 });

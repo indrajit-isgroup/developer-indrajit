@@ -3,77 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Indrajit Samanta</title>
+    <title>Secure Communications | Indrajit Samanta</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Shared 3D Particle Background -->
     <canvas id="bg-canvas"></canvas>
 
     <main id="content">
-        <!-- Shared Header -->
-        <header style="opacity: 1;">
+        <header class="anim-header">
             <div class="logo">
                 <span class="logo-dot"></span>INDRAJIT SAMANTA
             </div>
             <nav>
                 <a href="index.html#about" class="nav-link"><span>01.</span> About</a>
-                <a href="index.html#projects" class="nav-link"><span>02.</span> Projects</a>
+                <a href="projects.html" class="nav-link"><span>02.</span> Projects</a>
                 <a href="contact.html" class="nav-link active"><span>03.</span> Contact</a>
             </nav>
         </header>
 
-        <!-- Premium Contact Page Layout -->
         <section class="contact-page-section">
             <div class="contact-grid-layout">
                 
-                <!-- Left Side: Info -->
                 <div class="contact-info-side">
-                    <div class="section-tag">03 / Connect</div>
-                    <h1>Let's build something spectacular.</h1>
-                    <p>Have an idea, a project partnership proposal, or just want to say hello? Drop a message and let's start coding your vision into reality.</p>
+                    <div class="section-tag anim-text">03 / Secure Inbound Gateway</div>
+                    <h1 class="anim-text">Let's engineer your vision.</h1>
+                    <p class="anim-text">Have an intricate development blueprint, an API configuration challenge, or a web infrastructure requiring elite defensive hardening? Open a direct inbound stream below.</p>
                     
-                    <div class="contact-meta-details">
+                    <div class="contact-meta-details anim-text">
                         <div class="meta-item">
-                            <span>Email Directly</span>
+                            <span>Direct Encryption Mail</span>
                             <p>indrajit.cyber.point@gmail.com</p>
                         </div>
                         <div class="meta-item">
-                            <span>Social Networks</span>
+                            <span>Secure Instant Comms</span>
                             <div class="social-links">
                                 <a href="https://www.youtube.com/@Indrajitsvlogs01" target="_blank">YouTube</a>
-                                <a href="#" target="_blank">Facebook Page</a>
-                                <a href="https://api.whatsapp.com/send/?phone=7872252866" target="_blank">Whatchapp</a>
+                                <a href="https://linkedin.com/in/indrajitsamanta" target="_blank">LinkedIn</a>
+                                <a href="https://api.whatsapp.com/send/?phone=7872252866" target="_blank">WhatsApp</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Right Side: Interactive Form -->
                 <div class="contact-form-side">
-                    <form action="#" class="premium-form">
+                    <form action="#" class="premium-form form-anim">
                         <div class="form-group">
-                            <label for="name">Your Name</label>
+                            <label for="name">Your Corporate Identity / Name</label>
                             <input type="text" id="name" placeholder="John Doe" required>
                         </div>
                         <div class="form-group">
-                            <label for="email">Your Email</label>
-                            <input type="email" id="email" placeholder="john@example.com" required>
+                            <label for="email">Secured Email Address</label>
+                            <input type="email" id="email" placeholder="john@company.com" required>
                         </div>
                         <div class="form-group">
-                            <label for="message">Project Details / Message</label>
-                            <textarea id="message" rows="6" placeholder="Tell me about your project needs..." required></textarea>
+                            <label for="message">Project Brief & Infrastructure Requirements</label>
+                            <textarea id="message" rows="6" placeholder="Detail your application scope..." required></textarea>
                         </div>
-                        <button type="submit" class="form-submit-btn">Send Message &rarr;</button>
+                        <button type="submit" class="form-submit-btn">Transmit Requirements &rarr;</button>
                     </form>
                 </div>
 
             </div>
         </section>
+
+        <footer class="global-watermark-footer">
+            <div class="watermark-text">Designed & Hardened by Indrajit Samanta Terminal © 2026</div>
+            <div class="footer-system-status">
+                <span class="status-pulse-dot"></span>
+                <span>All Systems Operational</span>
+            </div>
+        </footer>
     </main>
 
-    <!-- Three.js Library for background continuity -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="script.js"></script>
 </body>
