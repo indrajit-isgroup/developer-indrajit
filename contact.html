@@ -47,7 +47,8 @@
                 </div>
 
                 <div class="contact-form-side">
-                    <form action="#" class="premium-form form-anim">
+                    <!-- WhatsApp Redirect JavaScript Form Integration -->
+                    <form id="whatsappForm" class="premium-form form-anim">
                         <div class="form-group">
                             <label for="name">Your Corporate Identity / Name</label>
                             <input type="text" id="name" placeholder="John Doe" required>
@@ -75,6 +76,33 @@
             </div>
         </footer>
     </main>
+
+    <!-- WhatsApp Form Handler Script -->
+    <script>
+        document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // পেজ রিফ্রেশ হওয়া বন্ধ করবে
+
+            // ফর্মের ডাটাগুলো ইনপুট ফিল্ড থেকে নেওয়া হচ্ছে
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            // আপনার হোয়াটসঅ্যাপ নম্বর (Country Code সহ)
+            const whatsappNumber = "917872252866"; 
+
+            // মেসেজের একটি প্রফেশনাল লেআউট তৈরি করা হচ্ছে
+            const text = `*New Portfolio Inbound Request*%0A%0A` +
+                         `*Name:* ${name}%0A` +
+                         `*Email:* ${email}%0A` +
+                         `*Project Scope:* ${message}`;
+
+            // হোয়াটসঅ্যাপ এপিআই ইউআরএল তৈরি করা হচ্ছে
+            const whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${text}`;
+
+            // নতুন ট্যাবে সরাসরি হোয়াটসঅ্যাপ ওপেন হবে
+            window.open(whatsappUrl, '_blank');
+        });
+    </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
